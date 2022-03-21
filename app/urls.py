@@ -1,6 +1,6 @@
-from django.urls import path
-from game.views import index
-
+from django.urls import path, include
+from django.contrib import admin
 urlpatterns = [
-    path('', index, name = 'game_index')
+    path('api/',include('acapp.urls')),
+    path('admin/', admin.site.urls),
 ]
