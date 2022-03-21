@@ -18,6 +18,7 @@ from django.urls import path
 
 from . import views
 urlpatterns = [
-    path('<str:module>/', views.SysView.as_View),
+    path('admin/', admin.site.urls),
+    path('<str:module>/', views.SysView.as_View()),
     path('page/NeatDataset', views.page_view_ND),
 ]
