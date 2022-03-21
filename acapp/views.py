@@ -41,6 +41,10 @@ class SysView(BaseView):
         if module == 'login':
             return SysView.login(request)
 
+    def as_View(self, request, module, **initkwargs):
+        SysView.get()
+        SysView.post()
+
     '''
     请求函数
     '''
@@ -75,3 +79,6 @@ class SysView(BaseView):
                 return SysView.error('用户密码输入错误')
         else:
             return SysView.error('用户名输入错误')
+
+
+
