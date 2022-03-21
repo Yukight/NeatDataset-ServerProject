@@ -13,14 +13,14 @@ class Users(models.Model):
     age = models.IntegerField('用户年龄', null=False)
     phone = models.CharField('联系电话', max_length=20, null=False)
     email = models.CharField('电子邮箱', max_length=32, null=False)
-    type = models.CharField('用户身份', null=False)
+    type = models.CharField('用户身份', max_length=20, null=False)
     class Meta:
         db_table = 'users'
 
 class Notices(models.Model):
     id = models.AutoField('记录编号', primary_key=True)
     title = models.CharField('通知标题', max_length=32, null=False)
-    detail = models.AutoField('通知详情',  max_length=125, null=False)
-    creatTime = models.AutoField('通知时间',  db_column='create_time', max_lenth=19)
+    detail = models.CharField('通知详情',  max_length=125, null=False)
+    creatTime = models.CharField('通知时间',  db_column='create_time', max_length=19)
     class Meta:
         db_table = 'notices'
